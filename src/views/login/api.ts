@@ -1,6 +1,11 @@
-import { request } from '@/utils'
-import type { RequestConfig } from '~/types/axios'
+import { post } from '@/utils'
 
 export default {
-  login: (data = {}) => request.post('/auth/login', data, { noNeedToken: true } as RequestConfig),
+  login: (data = {}) => post<{
+    token: string
+  }>({
+    url: '/auth/login',
+    data,
+    noNeedToken: true,
+  }),
 }

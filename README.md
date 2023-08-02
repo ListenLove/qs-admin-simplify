@@ -11,7 +11,7 @@
 </p>
 
 <p align='center'>
-  <b>English</b> | 
+  <b>English</b> |
   <a href="https://github.com/zclzone/qs-admin/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
@@ -31,13 +31,13 @@
 - 📦 Integrated `unplugin` auto import.
 - 🤹 Integrated `iconify` icon，support custom svg icons.
 - 🍇 Integrated `unocss`.
+- 🔧 Integrated `await-to-js`, Golang like error handler, better for http based requests.
 
 ### Preview
 
 [https://admin.qszone.com](https://admin.qszone.com)
 
 [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
-
 
 ### Getting Started
 
@@ -104,5 +104,3 @@ pnpm cz
 <a href="https://blog.qszone.com/about/">
   <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
 </a>
-
-
