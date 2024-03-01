@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/zclzone/qs-admin">
-    <img alt="Vue Naive Admin Logo" width="200" src="https://assets.qszone.com/images/logo_qs.svg">
+    <img alt="Vue Naive Admin Logo" width="200" src="./src/assets/images/logo.png">
   </a>
 </p>
 <p align="center">
@@ -14,6 +14,10 @@
   <b>简体中文</b> | 
   <a href="https://github.com/zclzone/qs-admin">English</a>
 </p>
+
+> 由于作者精力有限，ts版本不再维护，推荐使用js版本。
+
+js 版本: https://github.com/zclzone/vue-naive-admin
 
 ### 简介
 
@@ -34,7 +38,7 @@
 
 ### 预览
 
-[https://admin.qszone.com](https://admin.qszone.com)
+[https://admin.isme.top](https://admin.isme.top)
 
 [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
 
@@ -97,13 +101,13 @@ pnpm cz
 
 #### 预览
 
-- [https://template.qszone.com](https://template.qszone.com)
+- [https://template.isme.top](https://template.isme.top)
 - [https://zclzone.github.io/vue-naive-admin](https://zclzone.github.io/vue-naive-admin)
 
 ### 入群交流 & 关于作者
 
-<a href="https://blog.qszone.com/about/">
-  <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
+<a href="https://blog.isme.top/about/">
+  <img src="https://static.isme.top/images/about.png" style="max-width: 400px" />
 </a>
 
 
