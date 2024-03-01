@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { removeToken } from '~/src/utils'
+
 const { replace } = useRouter()
 </script>
 
@@ -9,9 +11,22 @@ const { replace } = useRouter()
         <img src="@/assets/images/404.webp" width="500">
       </template>
       <template #footer>
-        <n-button @click="replace('/')">
-          返回首页
-        </n-button>
+        <div f-c-c>
+          <n-space>
+            <n-button @click="replace('/')">
+              返回首页
+            </n-button>
+            <n-button
+              type="primary"
+              @click="() => {
+                removeToken()
+                replace('/login')
+              }"
+            >
+              返回登录
+            </n-button>
+          </n-space>
+        </div>
       </template>
     </n-result>
   </AppPage>

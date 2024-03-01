@@ -19,6 +19,7 @@ const themeStore = useThemeStore()
       :width="themeStore.sider.width"
       :native-scrollbar="false"
       :collapsed="themeStore.sider.collapsed"
+      content-style="display: flex; flex-direction: column; height: 100%;"
     >
       <SideBar />
     </n-layout-sider>

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useStorage } from '@vueuse/core'
 import api from './api'
-import { getLocal, removeLocal, setLocal, setToken } from '@/utils'
+import { getLocal, setToken } from '@/utils'
 import bgImg from '@/assets/images/login_bg.webp'
-import { addDynamicRoutes } from '@/router'
+import { addDynamicRoutes } from '~/src/router'
 
 const title: string = import.meta.env.VITE_APP_TITLE
 
@@ -17,8 +16,8 @@ interface LoginInfo {
 }
 
 const loginInfo = ref<LoginInfo>({
-  name: '',
-  password: '',
+  name: 'admin',
+  password: '123',
 })
 
 const localLoginInfo = getLocal('loginInfo') as LoginInfo
@@ -28,7 +27,6 @@ if (localLoginInfo) {
 }
 
 const loging = ref<boolean>(false)
-const isRemember = useStorage('isRemember', false)
 async function handleLogin() {
   const { name, password } = loginInfo.value
   if (!name || !password) {
@@ -37,13 +35,13 @@ async function handleLogin() {
   }
   try {
     loging.value = true
-    const res: any = await api.login({ name, password: password.toString() })
+    const [err, res] = await api.login({ name, password: password.toString() })
+    if (err) {
+      throw err
+    }
+
     window.$notification?.success({ title: '登录成功！', duration: 2500 })
-    setToken(res.data.token)
-    if (isRemember.value)
-      setLocal('loginInfo', { name, password })
-    else
-      removeLocal('loginInfo')
+    setToken(res?.data.token || '')
 
     await addDynamicRoutes()
     if (query.redirect) {
@@ -92,10 +90,6 @@ async function handleLogin() {
             :maxlength="20"
             @keydown.enter="handleLogin"
           />
-        </div>
-
-        <div mt-20>
-          <n-checkbox :checked="isRemember" label="记住我" :on-update:checked="(val:boolean) => (isRemember = val)" />
         </div>
 
         <div mt-20>

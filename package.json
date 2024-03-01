@@ -30,11 +30,15 @@
     }
   },
   "eslintConfig": {
-    "extends": "@antfu"
+    "extends": "@antfu",
+    "rules": {
+      "curly": "off"
+    }
   },
   "dependencies": {
     "@vueuse/core": "^10.1.2",
     "@zclzone/crud": "^0.0.13",
+    "await-to-js": "^3.0.0",
     "axios": "^1.4.0",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.8",
